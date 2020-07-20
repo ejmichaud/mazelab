@@ -88,3 +88,47 @@ Maze_15x15_RandomGoal_v0_entry_point = lambda: Maze_15x15_RandomGoal_v0
 gym.envs.register(id=env_id, entry_point=Maze_15x15_RandomGoal_v0_entry_point, max_episode_steps=200)
 
 
+
+x25 = np.array([[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+               [1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1]
+               [1 0 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 0 1 0 1]
+               [1 0 0 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0 1 0 1 0 1]
+               [1 1 1 0 1 1 1 0 1 0 1 0 1 0 1 1 1 0 1 0 1 1 1 0 1]
+               [1 0 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 1]
+               [1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 0 1 1 1 0 1]
+               [1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 1 0 1]
+               [1 0 1 0 1 0 1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 0 1]
+               [1 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1]
+               [1 0 1 0 1 0 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1]
+               [1 0 1 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 1]
+               [1 0 1 1 1 0 1 1 1 1 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1]
+               [1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 1]
+               [1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1]
+               [1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1]
+               [1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 0 1]
+               [1 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1]
+               [1 0 1 1 1 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1]
+               [1 0 0 0 1 0 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 0 1]
+               [1 0 1 1 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 1 1 0 1]
+               [1 0 1 0 0 0 1 0 0 0 1 0 1 0 1 0 1 0 0 0 0 0 1 0 1]
+               [1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 0 1]
+               [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]
+               [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]])
+
+env_id = "Maze-25x25-FixedGoal-v0"
+Maze_25x25_FixedGoal_v0 = Env(Maze(x25),
+          randomize_start=True, 
+          randomize_goal=False)
+Maze_25x25_FixedGoal_v0_entry_point = lambda: Maze_25x25_FixedGoal_v0
+gym.envs.register(id=env_id, entry_point=Maze_25x25_FixedGoal_v0_entry_point, max_episode_steps=300)
+
+
+env_id = "Maze-25x25-RandomGoal-v0"
+Maze_25x25_RandomGoal_v0 = Env(Maze(x25),
+          randomize_start=True, 
+          randomize_goal=True)
+Maze_25x25_RandomGoal_v0_entry_point = lambda: Maze_25x25_RandomGoal_v0
+gym.envs.register(id=env_id, entry_point=Maze_25x25_RandomGoal_v0_entry_point, max_episode_steps=300)
+
+
+
