@@ -186,7 +186,7 @@ class RandomizingMazeEnv(MazeEnv):
                             complexity=1.0, 
                             density=1.0))
         self.maze = m
-        super(RandomizingMazeEnv, self).reset()
+        return super(RandomizingMazeEnv, self).reset()
 
 
 

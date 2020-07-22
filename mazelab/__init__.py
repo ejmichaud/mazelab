@@ -6,7 +6,7 @@ from .object import Object
 from .motion import VonNeumannMotion
 from .motion import MooreMotion
 from .maze import BaseMaze
-from .env import BaseEnv, Maze, MazeEnv
+from .env import BaseEnv, Maze, MazeEnv, RandomizingMazeEnv
 
 from .generators import random_maze
 
@@ -129,6 +129,50 @@ Maze_25x25_RandomGoal_v0 = MazeEnv(Maze(x25),
           randomize_goal=True)
 Maze_25x25_RandomGoal_v0_entry_point = lambda: Maze_25x25_RandomGoal_v0
 gym.envs.register(id=env_id, entry_point=Maze_25x25_RandomGoal_v0_entry_point, max_episode_steps=300)
+
+
+env_id = "RandomMaze-7x7-FixedGoal-v0"
+RandomMaze_7x7_FixedGoal_v0 = RandomizingMazeEnv(
+    width=7,
+    height=7,
+    randomize_start=True,
+    randomize_goal=False
+)
+RandomMaze_7x7_FixedGoal_v0_entry_point = lambda: RandomMaze_7x7_FixedGoal_v0
+gym.envs.register(id=env_id, entry_point=RandomMaze_7x7_FixedGoal_v0_entry_point, max_episode_steps=300)
+
+
+env_id = "RandomMaze-7x7-RandomGoal-v0"
+RandomMaze_7x7_RandomGoal_v0 = RandomizingMazeEnv(
+    width=7,
+    height=7,
+    randomize_start=True,
+    randomize_goal=True
+)
+RandomMaze_7x7_RandomGoal_v0_entry_point = lambda: RandomMaze_7x7_RandomGoal_v0
+gym.envs.register(id=env_id, entry_point=RandomMaze_7x7_RandomGoal_v0_entry_point, max_episode_steps=300)
+
+
+env_id = "RandomMaze-8x8-FixedGoal-v0"
+RandomMaze_8x8_FixedGoal_v0 = RandomizingMazeEnv(
+    width=8,
+    height=8,
+    randomize_start=True,
+    randomize_goal=False
+)
+RandomMaze_8x8_FixedGoal_v0_entry_point = lambda: RandomMaze_8x8_FixedGoal_v0
+gym.envs.register(id=env_id, entry_point=RandomMaze_8x8_FixedGoal_v0_entry_point, max_episode_steps=300)
+
+
+env_id = "RandomMaze-8x8-RandomGoal-v0"
+RandomMaze_8x8_RandomGoal_v0 = RandomizingMazeEnv(
+    width=8,
+    height=8,
+    randomize_start=True,
+    randomize_goal=True
+)
+RandomMaze_8x8_RandomGoal_v0_entry_point = lambda: RandomMaze_8x8_RandomGoal_v0
+gym.envs.register(id=env_id, entry_point=RandomMaze_8x8_RandomGoal_v0_entry_point, max_episode_steps=300)
 
 
 
