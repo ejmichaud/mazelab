@@ -14,6 +14,7 @@ from mazelab import BaseMaze
 from mazelab import Object
 from mazelab import DeepMindColor as color
 from mazelab import VonNeumannMotion
+from mazelab.generators import random_maze
 
 # GAMMA = 0.999
 
@@ -86,7 +87,7 @@ class Maze(BaseMaze):
         return free, obstacle, agent, goal
 
 
-class Env(BaseEnv):
+class MazeEnv(BaseEnv):
     def __init__(self, maze, start_pos=None, 
                              goal_pos=None, 
                              randomize_start=False, 
@@ -170,6 +171,22 @@ class Env(BaseEnv):
         return self.maze.to_rgb()
 
 
+class RandomizingMazeEnv(MazeEnv):
+    def __init__(self, width, height, randomize_start=False, randomize_goal=False):
+        m = Maze(random_maze(width=width, height=height, complexity=1.0, density=1.0))
+        self.width = width
+        self.height = height
+        super(RandomizingMazeEnv, self).__init__(m, 
+                    randomize_start=randomize_start,
+                    randomize_goal=randomize_goal)
+
+    def reset(self):
+        m =  Maze(random_maze(width=self.width, 
+                            height=self.height,
+                            complexity=1.0, 
+                            density=1.0))
+        self.maze = m
+        super(RandomizingMazeEnv, self).reset()
 
 
 
