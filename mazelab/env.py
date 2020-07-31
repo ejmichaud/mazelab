@@ -127,7 +127,7 @@ class MazeEnv(BaseEnv):
         if valid:
             self.maze.objects.agent.positions = [new_position]
         if self._is_goal(new_position):
-            reward = +10
+            reward = +10.0
             done = True
         elif not valid:
             reward = -0.1
