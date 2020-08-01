@@ -189,6 +189,52 @@ class RandomizingMazeEnv(MazeEnv):
         return super(RandomizingMazeEnv, self).reset()
 
 
+class NonTerminatingMazeEnv(MazeEnv):
+    """Just like MazeEnv but done=False always."""
+    
+    def __init__(self, *args, **kwargs):
+        super(NonTerminatingMazeEnv, self).__init__(*args, **kwargs)
+    
+    def step(self, action):
+        motion = self.motions[action]
+        current_position = self.maze.objects.agent.positions[0]
+        new_position = [current_position[0] + motion[0], current_position[1] + motion[1]]
+        valid = self._is_valid(new_position)
+        if valid:
+            self.maze.objects.agent.positions = [new_position]
+        if self._is_goal(new_position):
+            reward = +1.0
+        elif not valid:
+            reward = -0.1
+        else:
+            reward = -0.01
+        
+        return self.maze.to_value(), reward, False, {}
+
+
+class RandomizingNonTerminatingMazeEnv(RandomizingMazeEnv):
+    """Just like RandomizingMazeEnv but done=False always."""
+    
+    def __init__(self, *args, **kwargs):
+        super(RandomizingNonTerminatingMazeEnv, self).__init__(*args, **kwargs)
+    
+    def step(self, action):
+        motion = self.motions[action]
+        current_position = self.maze.objects.agent.positions[0]
+        new_position = [current_position[0] + motion[0], current_position[1] + motion[1]]
+        valid = self._is_valid(new_position)
+        if valid:
+            self.maze.objects.agent.positions = [new_position]
+        if self._is_goal(new_position):
+            reward = +1.0
+        elif not valid:
+            reward = -0.1
+        else:
+            reward = -0.01
+        
+        return self.maze.to_value(), reward, False, {}
+
+
 
 
 
