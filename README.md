@@ -1,6 +1,7 @@
 # `mazelab`: A customizable framework to create maze and gridworld environments.
 
 This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab), and defines several maze gym environments with greyscale image observation spaces.
+
 **Mazes with no walls**
 * `EmptyMaze-10x10-FixedGoal-v0`
 * `EmptyMaze-10x10-FixedGoal-NonTerminating-v0`
@@ -27,6 +28,7 @@ This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab),
 * `RandomMaze-8x8-FixedGoal-v0`
 * `RandomMaze-8x8-FixedGoal-NonTerminating-v0`
 * `RandomMaze-8x8-RandomGoal-v0`
+* `RandomMaze-8x8-CoinFlipGoal-NonTerminating-v0`
 
 # Installation
 
