@@ -42,6 +42,15 @@ EmptyMaze_10x10_RandomGoal_v0_entry_point = lambda: EmptyMaze_10x10_RandomGoal_v
 gym.envs.register(id=env_id, entry_point=EmptyMaze_10x10_RandomGoal_v0_entry_point, max_episode_steps=200)
 
 
+env_id = "EmptyMaze-10x10-CoinflipGoal-NonTerminating-v0"
+x = random_maze(width=10, height=10, complexity=0.7, density=0.0)
+EmptyMaze_10x10_CoinflipGoal_NonTerminating_v0 = NonTerminatingMazeEnv(Maze(x),
+          randomize_start=True, 
+          randomize_goal=False,
+          coinflip_goal=True)
+EmptyMaze_10x10_CoinflipGoal_NonTerminating_v0_entry_point = lambda: EmptyMaze_10x10_CoinflipGoal_NonTerminating_v0
+gym.envs.register(id=env_id, entry_point=EmptyMaze_10x10_CoinflipGoal_NonTerminating_v0_entry_point, max_episode_steps=200)
+
 
 x10 = np.array([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],

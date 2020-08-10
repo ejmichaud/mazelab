@@ -92,6 +92,7 @@ class MazeEnv(BaseEnv):
                              goal_pos=None, 
                              randomize_start=False, 
                              randomize_goal=False,
+                             coinflip_goal=False,
                              # shaping=False):
                              ):
         """
@@ -105,6 +106,8 @@ class MazeEnv(BaseEnv):
             randomize_goal (bool): Whether to randomize the goal position between episodes.
         """
         super().__init__()
+        if randomize_goal and coinflip_goal:
+            raise Exception("Choose either the coinflip goal or the totally random goal, can't have both True.")
         self.maze = maze
         self.motions = VonNeumannMotion()
         w, h = self.maze.size
@@ -114,6 +117,8 @@ class MazeEnv(BaseEnv):
         else:                 self.goal_pos = goal_pos
         self.randomize_start = randomize_start
         self.randomize_goal = randomize_goal
+        self.coinflip_goal = coinflip_goal
+        self.coinflip_goal_positions = [[1, 1], [w-2, h-2]]
         # self.shaping = shaping
         self.observation_space = Box(low=0, high=len(self.maze.objects), shape=self.maze.size, dtype=np.uint8)
         self.action_space = Discrete(len(self.motions))
@@ -149,6 +154,8 @@ class MazeEnv(BaseEnv):
             self.maze.objects.agent.positions = [self.start_pos]
         if self.randomize_goal: 
             self.maze.objects.goal.positions = [list(random.choice(self.maze.objects.free.positions))]
+        elif self.coinflip_goal:
+            self.maze.objects.goal.positions = [random.choice(self.coinflip_goal_positions)]
         else:
             self.maze.objects.goal.positions = [self.goal_pos] 
         return self.maze.to_value()
@@ -172,13 +179,14 @@ class MazeEnv(BaseEnv):
 
 
 class RandomizingMazeEnv(MazeEnv):
-    def __init__(self, width, height, randomize_start=False, randomize_goal=False):
+    def __init__(self, width, height, randomize_start=False, randomize_goal=False, coinflip_goal=False):
         m = Maze(random_maze(width=width, height=height, complexity=1.0, density=1.0))
         self.width = width
         self.height = height
         super(RandomizingMazeEnv, self).__init__(m, 
                     randomize_start=randomize_start,
-                    randomize_goal=randomize_goal)
+                    randomize_goal=randomize_goal,
+                    coinflip_goal=coinflip_goal)
 
     def reset(self):
         m =  Maze(random_maze(width=self.width, 
@@ -233,10 +241,6 @@ class RandomizingNonTerminatingMazeEnv(RandomizingMazeEnv):
             reward = -0.01
         
         return self.maze.to_value(), reward, False, {}
-
-
-
-
 
 
 
