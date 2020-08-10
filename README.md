@@ -1,19 +1,21 @@
 # `mazelab`: A customizable framework to create maze and gridworld environments.
 
-This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab), and defines several maze gym environments with visual inputs:
+This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab), and defines several maze gym environments with greyscale image observation spaces.
 **Mazes with no walls**
 * `EmptyMaze-10x10-FixedGoal-v0`
 * `EmptyMaze-10x10-FixedGoal-NonTerminating-v0`
 * `EmptyMaze-10x10-RandomGoal-v0`
-* `EmptyMaze-10x10-CoinflipGoal-NonTerminating-v0`
+* `EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v0`
 
 **Mazes with fixed walls**
 * `Maze-10x10-FixedGoal-v0`
 * `Maze-10x10-FixedGoal-NonTerminating-v0`
 * `Maze-10x10-RandomGoal-v0`
+* `Maze-10x10-CoinFlipGoal-NonTerminating-v0`
 * `Maze-15x15-FixedGoal-v0`
 * `Maze-15x15-FixedGoal-NonTerminating-v0`
 * `Maze-15x15-RandomGoal-v0`
+* `Maze-15x15-CoinFlipGoal-NonTerminating-v0`
 * `Maze-25x25-FixedGoal-v0`
 * `Maze-25x25-RandomGoal-v0`
 
@@ -21,6 +23,7 @@ This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab),
 * `RandomMaze-7x7-FixedGoal-v0`
 * `RandomMaze-7x7-FixedGoal-NonTerminating-v0`
 * `RandomMaze-7x7-RandomGoal-v0`
+* `RandomMaze-7x7-CoinFlipGoal-NonTerminating-v0`
 * `RandomMaze-8x8-FixedGoal-v0`
 * `RandomMaze-8x8-FixedGoal-NonTerminating-v0`
 * `RandomMaze-8x8-RandomGoal-v0`
