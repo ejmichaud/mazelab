@@ -132,11 +132,8 @@ class MazeEnv(BaseEnv):
         if valid:
             self.maze.objects.agent.positions = [new_position]
         if self._is_goal(new_position):
-            reward = +10.0
+            reward = +1.0
             done = True
-        elif not valid:
-            reward = -0.1
-            done = False
         else:
             reward = -0.01
             done = False
@@ -212,11 +209,8 @@ class NonTerminatingMazeEnv(MazeEnv):
             self.maze.objects.agent.positions = [new_position]
         if self._is_goal(new_position):
             reward = +1.0
-        elif not valid:
-            reward = -0.1
         else:
             reward = -0.01
-        
         return self.maze.to_value(), reward, False, {}
 
 
@@ -235,14 +229,9 @@ class RandomizingNonTerminatingMazeEnv(RandomizingMazeEnv):
             self.maze.objects.agent.positions = [new_position]
         if self._is_goal(new_position):
             reward = +1.0
-        elif not valid:
-            reward = -0.1
         else:
             reward = -0.01
-        
         return self.maze.to_value(), reward, False, {}
-
-
 
 
 
