@@ -131,11 +131,13 @@ class MazeEnv(BaseEnv):
         valid = self._is_valid(new_position)
         if valid:
             self.maze.objects.agent.positions = [new_position]
+        else:
+            new_position = current_position
         if self._is_goal(new_position):
             reward = +1.0
             done = True
         else:
-            reward = -0.01
+            reward = +0.0
             done = False
         # d_s0 = manhattan_distance(current_position, self.maze.objects.goal.positions[0])
         # d_s1 = manhattan_distance(new_position, self.maze.objects.goal.positions[0])
@@ -207,10 +209,12 @@ class NonTerminatingMazeEnv(MazeEnv):
         valid = self._is_valid(new_position)
         if valid:
             self.maze.objects.agent.positions = [new_position]
+        else:
+            new_position = current_position
         if self._is_goal(new_position):
             reward = +1.0
         else:
-            reward = -0.01
+            reward = +0.0
         return self.maze.to_value(), reward, False, {}
 
 
@@ -227,10 +231,14 @@ class RandomizingNonTerminatingMazeEnv(RandomizingMazeEnv):
         valid = self._is_valid(new_position)
         if valid:
             self.maze.objects.agent.positions = [new_position]
+        else:
+            new_position = current_position
         if self._is_goal(new_position):
             reward = +1.0
+            done = True
         else:
-            reward = -0.01
+            reward = +0.0
+            done = False
         return self.maze.to_value(), reward, False, {}
 
 
