@@ -3,33 +3,33 @@
 This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab), and defines several maze gym environments with greyscale image observation spaces.
 
 **Mazes with no walls**
-* `EmptyMaze-10x10-FixedGoal-v2`
-* `EmptyMaze-10x10-FixedGoal-NonTerminating-v2`
-* `EmptyMaze-10x10-CoinFlipGoal-v2`
-* `EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v2`
-* `EmptyMaze-10x10-RandomGoal-v2`
+* `EmptyMaze-10x10-FixedGoal-v3`
+* `EmptyMaze-10x10-FixedGoal-NonTerminating-v3`
+* `EmptyMaze-10x10-CoinFlipGoal-v3`
+* `EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v3`
+* `EmptyMaze-10x10-RandomGoal-v3`
 
 **Mazes with fixed walls**
-* `Maze-10x10-FixedGoal-v2`
-* `Maze-10x10-FixedGoal-NonTerminating-v2`
-* `Maze-10x10-RandomGoal-v2`
-* `Maze-10x10-CoinFlipGoal-NonTerminating-v2`
-* `Maze-15x15-FixedGoal-v2`
-* `Maze-15x15-FixedGoal-NonTerminating-v2`
-* `Maze-15x15-RandomGoal-v2`
-* `Maze-15x15-CoinFlipGoal-NonTerminating-v2`
-* `Maze-25x25-FixedGoal-v2`
-* `Maze-25x25-RandomGoal-v2`
+* `Maze-10x10-FixedGoal-v3`
+* `Maze-10x10-FixedGoal-NonTerminating-v3`
+* `Maze-10x10-RandomGoal-v3`
+* `Maze-10x10-CoinFlipGoal-NonTerminating-v3`
+* `Maze-15x15-FixedGoal-v3`
+* `Maze-15x15-FixedGoal-NonTerminating-v3`
+* `Maze-15x15-RandomGoal-v3`
+* `Maze-15x15-CoinFlipGoal-NonTerminating-v3`
+* `Maze-25x25-FixedGoal-v3`
+* `Maze-25x25-RandomGoal-v3`
 
 **Mazes with walls which change on reset**
-* `RandomMaze-7x7-FixedGoal-v2`
-* `RandomMaze-7x7-FixedGoal-NonTerminating-v2`
-* `RandomMaze-7x7-RandomGoal-v2`
-* `RandomMaze-7x7-CoinFlipGoal-NonTerminating-v2`
-* `RandomMaze-8x8-FixedGoal-v2`
-* `RandomMaze-8x8-FixedGoal-NonTerminating-v2`
-* `RandomMaze-8x8-RandomGoal-v2`
-* `RandomMaze-8x8-CoinFlipGoal-NonTerminating-v2`
+* `RandomMaze-7x7-FixedGoal-v3`
+* `RandomMaze-7x7-FixedGoal-NonTerminating-v3`
+* `RandomMaze-7x7-RandomGoal-v3`
+* `RandomMaze-7x7-CoinFlipGoal-NonTerminating-v3`
+* `RandomMaze-8x8-FixedGoal-v3`
+* `RandomMaze-8x8-FixedGoal-NonTerminating-v3`
+* `RandomMaze-8x8-RandomGoal-v3`
+* `RandomMaze-8x8-CoinFlipGoal-NonTerminating-v3`
 
 # Installation
 
@@ -51,7 +51,7 @@ import mazelab
 ```
 This will create and register the maze environments `1-6` listed above. To create an environment, you can then simply execute:
 ```python
-env = gym.make('Maze-10x10-FixedGoal-v2')
+env = gym.make('Maze-10x10-FixedGoal-v3')
 ```
 
 
