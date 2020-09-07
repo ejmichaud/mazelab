@@ -24,6 +24,7 @@ This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab),
 **Mazes with walls which change on reset**
 * `RandomMaze-7x7-FixedGoal-v3`
 * `RandomMaze-7x7-FixedGoal-NonTerminating-v3`
+* `RandomMaze-7x7-CoinFlipGoal-v3`
 * `RandomMaze-7x7-RandomGoal-v3`
 * `RandomMaze-7x7-CoinFlipGoal-NonTerminating-v3`
 * `RandomMaze-8x8-FixedGoal-v3`
