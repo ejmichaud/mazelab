@@ -7,6 +7,7 @@ This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab),
 * `EmptyMaze-10x10-FixedGoal-NonTerminating-v3`
 * `EmptyMaze-10x10-CoinFlipGoal-v3`
 * `EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v3`
+* `EmptyMaze-10x10-TwoGoals-NonTerminating-v3`
 * `EmptyMaze-10x10-RandomGoal-v3`
 
 **Mazes with fixed walls**

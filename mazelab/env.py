@@ -93,6 +93,7 @@ class MazeEnv(BaseEnv):
                              randomize_start=False, 
                              randomize_goal=False,
                              coinflip_goal=False,
+                             two_goals=False
                              # shaping=False):
                              ):
         """
@@ -119,6 +120,7 @@ class MazeEnv(BaseEnv):
         self.randomize_goal = randomize_goal
         self.coinflip_goal = coinflip_goal
         self.coinflip_goal_positions = [[1, 1], [w-2, h-2]]
+        self.two_goals = two_goals
         # self.shaping = shaping
         self.observation_space = Box(low=0, high=len(self.maze.objects), shape=self.maze.size, dtype=np.uint8)
         self.action_space = Discrete(len(self.motions))
@@ -155,6 +157,8 @@ class MazeEnv(BaseEnv):
             self.maze.objects.goal.positions = [list(random.choice(self.maze.objects.free.positions))]
         elif self.coinflip_goal:
             self.maze.objects.goal.positions = [random.choice(self.coinflip_goal_positions)]
+        elif self.two_goals:
+            self.maze.objects.goal.positions = self.coinflip_goal_positions
         else:
             self.maze.objects.goal.positions = [self.goal_pos] 
         return self.maze.to_value()

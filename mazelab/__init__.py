@@ -43,6 +43,17 @@ EmptyMaze_10x10_CoinFlipGoal_v3_entry_point = lambda: EmptyMaze_10x10_CoinFlipGo
 gym.envs.register(id=env_id, entry_point=EmptyMaze_10x10_CoinFlipGoal_v3_entry_point, max_episode_steps=200)
 
 
+env_id = "EmptyMaze-10x10-TwoGoals-v3"
+x = random_maze(width=10, height=10, complexity=0.7, density=0.0)
+EmptyMaze_10x10_TwoGoals_v3 = MazeEnv(Maze(x),
+          randomize_start=True, 
+          randomize_goal=False,
+          coinflip_goal=False,
+          two_goals=True)
+EmptyMaze_10x10_TwoGoals_v3_entry_point = lambda: EmptyMaze_10x10_TwoGoals_v3 
+gym.envs.register(id=env_id, entry_point=EmptyMaze_10x10_TwoGoals_v3_entry_point, max_episode_steps=200)
+
+
 env_id = "EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v3"
 x = random_maze(width=10, height=10, complexity=0.7, density=0.0)
 EmptyMaze_10x10_CoinFlipGoal_NonTerminating_v3 = NonTerminatingMazeEnv(Maze(x),
