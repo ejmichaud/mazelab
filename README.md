@@ -4,34 +4,44 @@ This is a fork of [zuoxingdong/mazelab](https://github.com/zuoxingdong/mazelab),
 
 **Mazes with no walls**
 * `EmptyMaze-10x10-FixedGoal-v3`
-* `EmptyMaze-10x10-FixedGoal-NonTerminating-v3`
 * `EmptyMaze-10x10-CoinFlipGoal-v3`
-* `EmptyMaze-10x10-CoinFlipGoal-NonTerminating-v3`
-* `EmptyMaze-10x10-TwoGoals-NonTerminating-v3`
+* `EmptyMaze-10x10-TwoGoals-v3`
 * `EmptyMaze-10x10-RandomGoal-v3`
+
+as well as NonTerminating variants like:
+* `EmptyMaze-10x10-FixedGoal-NonTerminating-v3`
+`...`
 
 **Mazes with fixed walls**
 * `Maze-10x10-FixedGoal-v3`
-* `Maze-10x10-FixedGoal-NonTerminating-v3`
+* `Maze-10x10-CoinFlipGoal-v3`
+* `Maze-10x10-TwoGoals-v3`
 * `Maze-10x10-RandomGoal-v3`
-* `Maze-10x10-CoinFlipGoal-NonTerminating-v3`
+
 * `Maze-15x15-FixedGoal-v3`
-* `Maze-15x15-FixedGoal-NonTerminating-v3`
+* `Maze-15x15-CoinFlipGoal-v3`
+* `Maze-15x15-TwoGoals-v3`
 * `Maze-15x15-RandomGoal-v3`
-* `Maze-15x15-CoinFlipGoal-NonTerminating-v3`
+
 * `Maze-25x25-FixedGoal-v3`
+* `Maze-25x25-CoinFlipGoal-v3`
+* `Maze-25x25-TwoGoals-v3`
 * `Maze-25x25-RandomGoal-v3`
+
+as well as NonTerminating variants of each
+`...`
 
 **Mazes with walls which change on reset**
 * `RandomMaze-7x7-FixedGoal-v3`
-* `RandomMaze-7x7-FixedGoal-NonTerminating-v3`
 * `RandomMaze-7x7-CoinFlipGoal-v3`
 * `RandomMaze-7x7-RandomGoal-v3`
-* `RandomMaze-7x7-CoinFlipGoal-NonTerminating-v3`
+
 * `RandomMaze-8x8-FixedGoal-v3`
-* `RandomMaze-8x8-FixedGoal-NonTerminating-v3`
+* `RandomMaze-8x8-CoinFlipGoal-v3`
 * `RandomMaze-8x8-RandomGoal-v3`
-* `RandomMaze-8x8-CoinFlipGoal-NonTerminating-v3`
+
+as well as NonTerminating variants of each
+`...`
 
 # Installation
 
